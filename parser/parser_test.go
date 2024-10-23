@@ -9,9 +9,8 @@ import (
 func TestLetStatements(t *testing.T) {
 	input := `
 	let x = 5;
-	let y = 10
-	let foobar = 838383;
-	`
+	let y = 10;
+	let foobar = 838383;`
 	l := lexer.New(input)
 	p := New(l)
 
@@ -20,7 +19,7 @@ func TestLetStatements(t *testing.T) {
 		t.Fatalf("Parse program returned nil")
 	}
 	
-	if len(input) != 3 {
+	if len(program.Statements) != 3 {
 		t.Fatalf("program.Statements does not contain 3 statements. got=%d", len(program.Statements))
 	}
 
