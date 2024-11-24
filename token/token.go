@@ -1,61 +1,64 @@
 package token
 
-// We could make the type be represented by an int or byte for performance,
-// but I am not very concerned in performance as this won't be production lang
 type TokenType string
 
 const (
 	ILLEGAL = "ILLEGAL"
-	EOF		= "EOF"
+	EOF     = "EOF"
 
-	//	identifiers and literals
-	IDENT = "IDENT"
-	INT	  = "INT"
+	// Identifiers + literals
+	IDENT  = "IDENT"  // add, foobar, x, y, ...
+	INT    = "INT"    // 1343456
+	STRING = "STRING" // "foobar"
 
-	// operators
-	PLUS	 = "+"
-	ASSIGN 	 = "="
-	MINUS 	 = "-"
-	BANG 	 = "!"
-	SLASH	 = "/"
+	// Operators
+	ASSIGN   = "="
+	PLUS     = "+"
+	MINUS    = "-"
+	BANG     = "!"
 	ASTERISK = "*"
+	SLASH    = "/"
 
-	LT 	   = "<"
-	GT 	   = ">"
-	EQ 	   = "=="
+	LT = "<"
+	GT = ">"
+
+	EQ     = "=="
 	NOT_EQ = "!="
 
-	// delimiters
-	COMMA	  = ","
+	// Delimiters
+	COMMA     = ","
 	SEMICOLON = ";"
+	COLON     = ":"
 
-	LPAREN = "("
-	RPAREN = ")"
-	LBRACE = "{"
-	RBRACE = "}"
+	LPAREN   = "("
+	RPAREN   = ")"
+	LBRACE   = "{"
+	RBRACE   = "}"
+	LBRACKET = "["
+	RBRACKET = "]"
 
-	//keywords
+	// Keywords
 	FUNCTION = "FUNCTION"
-	LET		 = "LET"
-	TRUE	 = "TRUE"
-	FALSE	 = "FALSE"
-	IF 		 = "IF"
-	ELSE	 = "ELSE"
-	RETURN	 = "RETURN"
+	LET      = "LET"
+	TRUE     = "TRUE"
+	FALSE    = "FALSE"
+	IF       = "IF"
+	ELSE     = "ELSE"
+	RETURN   = "RETURN"
 )
 
 type Token struct {
-	Type TokenType
+	Type    TokenType
 	Literal string
 }
 
 var keywords = map[string]TokenType{
-	"fn": FUNCTION,
-	"let": LET,
-	"true":TRUE,
-	"false":FALSE,
-	"if":IF,
-	"else":ELSE,
+	"fn":     FUNCTION,
+	"let":    LET,
+	"true":   TRUE,
+	"false":  FALSE,
+	"if":     IF,
+	"else":   ELSE,
 	"return": RETURN,
 }
 
