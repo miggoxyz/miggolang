@@ -60,4 +60,4 @@
 - **Built-in Functions**: Includes functions like `len`, `first`, `last`, and custom user-defined functions.
 - **Error Handling**: Gracefully identifies and reports syntax or runtime errors.
 
-## Contibuting
+## Contributing
